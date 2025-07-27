@@ -1,6 +1,6 @@
 const firebaseConfig = {
             apiKey: "AIzaSyCBeFJtPKEMURY-iUDUR4I6gWKjmlTk_3E",
-            authDomain: "localhost",     
+            authDomain: "authdramaarena.web.app",     
             databaseURL: "https://authdramaarena.firebaseio.com",
             projectId: "authdramaarena",                      
             storageBucket: "authdramaarena.appspot.com",      
