@@ -10,7 +10,6 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 const user = firebase.auth().currentUser;
 const db = firebase.firestore();
 const inputKey = prompt("Masukan Key:");
