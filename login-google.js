@@ -1,6 +1,6 @@
 const firebaseConfig = {
             apiKey: "AIzaSyCBeFJtPKEMURY-iUDUR4I6gWKjmlTk_3E",
-            authDomain: "authdramaarena.web.app",     
+            authDomain: "authdramaarena.firebaseapp.com",     
             databaseURL: "https://authdramaarena.firebaseio.com",
             projectId: "authdramaarena",                      
             storageBucket: "authdramaarena.appspot.com",      
@@ -16,7 +16,10 @@ const firebaseConfig = {
             document.getElementById("tombol").addEventListener('click', () => {
             auth.signInWithPopup(provider)
                 .then((result) => {
-                    updateUI(result.user);
+                    const user = result.user;
+                    console.log("User signed in:", user.displayName);
+                    alert(`Welcome ${user.displayName}`);
+                    window.location.href = `https://da5100.github.io/auth/serial/?email=${result.user.email}`;
                 })
                 .catch((error) => {
                     console.error('Error signing in with Google:', error);
