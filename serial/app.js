@@ -13,14 +13,12 @@ const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const user = firebase.auth().currentUser;
 const db = firebase.firestore();
-// const inputKey = prompt("Masukan Key:");
+const inputKey = prompt("Masukan Key:");
 const keyRef = db.collection("lisensi").doc("serialKey");
-let inputKey = document.addEventListener("DOMContentLoaded", function(){
-  const inputKey = document.getElementById("inputKey")
-  return inputKey.FieldValue;
-})
+document.addEventListener("DOMContentLoaded", function(){
+  const inputKey = document.getElementById("inputKey").value;
 
-keyRef.get().then((doc) => {
+  keyRef.get().then((doc) => {
   if (!doc.exists) {
     alert("Serial key tidak ditemukan.");
     auth.signOut();
@@ -69,3 +67,6 @@ keyRef.get().then((doc) => {
   console.error("Gagal cek serial key:", error);
   alert("Gagal verifikasi serial key.");
 });
+})
+
+
